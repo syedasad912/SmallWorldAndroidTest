@@ -29,7 +29,7 @@ class MovieListFragment : Fragment() {
         binding = FragmentMovieListBinding.inflate(inflater, container, false)
         getMoviesList()
         binding?.searchView?.doAfterTextChanged {
-            filterMovie(it.toString())
+            if(!it.isNullOrEmpty()) filterMovie(it.toString())
         }
         return binding?.root
     }
