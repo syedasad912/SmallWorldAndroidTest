@@ -13,7 +13,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:adjustViewBounds="true"
-            android:src="@drawable/asad"
+            android:src="@drawable/placeholder"
             app:layout_constraintBottom_toTopOf="@+id/textTitle"
             app:layout_constraintDimensionRatio="h,2:3"
             app:layout_constraintEnd_toEndOf="parent"

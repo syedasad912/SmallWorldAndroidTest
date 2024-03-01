@@ -1,6 +1,4 @@
-package com.asad.smallworldandroidtest
-
-import com.google.gson.annotations.Expose
+package com.asad.smallworldandroidtest.data.model
 
 import com.google.gson.annotations.SerializedName
 

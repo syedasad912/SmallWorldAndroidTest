@@ -1,4 +1,4 @@
-package com.asad.smallworldandroidtest
+package com.asad.smallworldandroidtest.presentation.detail
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,12 +6,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import com.asad.smallworldandroidtest.R
+import com.asad.smallworldandroidtest.data.repository.MovieRepository
 import com.asad.smallworldandroidtest.databinding.FragmentMovieDetailBinding
+import com.asad.smallworldandroidtest.presentation.MoviesViewModel
+import com.asad.smallworldandroidtest.utils.ApiService
 import com.bumptech.glide.Glide
 import kotlinx.coroutines.launch
 
 class MovieDetailFragment : Fragment() {
     private var movieId: Long = 0
+    private var posterSize: String = "original"
     private var binding: FragmentMovieDetailBinding? = null
     private val moviesViewModel = MoviesViewModel(MovieRepository(ApiService))
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,12 +40,11 @@ class MovieDetailFragment : Fragment() {
 
     private fun setupMovieDetail() {
         val baseUrl = ApiService.IMAGE_BASE_URL
-        val size = "original"
         moviesViewModel.movieDetail.observe(requireActivity()) {
             val posterPath = it.posterPath
-            val imageUrl = "$baseUrl$size$posterPath"
+            val posterUrl = "$baseUrl$posterSize$posterPath"
             binding?.imagePoster?.let { it1 ->
-                Glide.with(requireActivity()).load(imageUrl).into(
+                Glide.with(requireActivity()).load(posterUrl).into(
                     it1
                 )
             }

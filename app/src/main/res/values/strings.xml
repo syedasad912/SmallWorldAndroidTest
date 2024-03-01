@@ -9,4 +9,7 @@
     <string name="release_date">Release Date: "</string>
     <string name="production_company">"Production Company: "</string>
     <string name="production_country">"Production Country: "</string>
+    <string name="title">"Title: "</string>
+    <string name="popularity">"Popularity: "</string>
+    <string name="search_by_movie_name">Search by movie name</string>
 </resources>

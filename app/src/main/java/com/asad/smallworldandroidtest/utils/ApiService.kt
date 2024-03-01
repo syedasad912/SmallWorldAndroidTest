@@ -1,4 +1,4 @@
-package com.asad.smallworldandroidtest
+package com.asad.smallworldandroidtest.utils
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
